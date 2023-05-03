@@ -1,4 +1,5 @@
 truffle
-ganache
+rust
+foundry
 solidity 0.5.16
 // Metamask extension on Chrome

@@ -2,11 +2,12 @@ module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // for more about customizing your Truffle configuration!
   networks: {
-    development: {
-      host: "127.0.0.1",
-      port: 7545,
-      network_id: "*" // Match any network id
-    },
+    foundry: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, "https://api.foundry.tech/v1/<NETWORK_ID>"),
+      network_id: "*",
+      gasPrice: 1,
+      gas: 2,
+   }
     develop: {
       port: 8545
     }
