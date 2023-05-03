@@ -19,9 +19,9 @@ contract Election { // this declares the smart contract
     uint public candidatesCount;
 
     // voted event
-    // event votedEvent (
-    //     uint indexed _candidateId
-    // );
+    event votedEvent (
+         uint indexed _candidateId
+    );
 
     // Constructor-- gets called every time the smart contract is deployed on the blockchain
     constructor () public {
@@ -51,6 +51,10 @@ contract Election { // this declares the smart contract
 
         // Updates the correct candidate's vote count
         candidates[_candidateId].voteCount ++;
+
+        // trigger voted event
+        emit votedEvent(_candidateId);
+
     }
 
 }
